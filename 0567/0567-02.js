@@ -1,0 +1,28 @@
+var checkInclusion = function(s1, s2) {
+    if (s1.length > s2.length) return false;
+    
+    const a = "a".charCodeAt(0);
+    const c1 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    const c2 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    for (let i = 0; i < s1.length; i++) {
+        c1[s1.charCodeAt(i) - a]++;
+        c2[s2.charCodeAt(i) - a]++;
+    }
+    
+    const w = s2.length - s1.length;
+    for (let i = 0; i < w; i++) {
+        if (matches(c1, c2)) return true;
+        
+        c2[s2.charCodeAt(i) - a]--;
+        c2[s2.charCodeAt(i + s1.length) - a]++;
+    }
+    
+    return matches(c1, c2);
+};
+
+function matches(c1, c2) {
+    for (let i = 0; i < 26; i++) {
+        if (c1[i] !== c2[i]) return false;
+    }
+    return true;
+}
