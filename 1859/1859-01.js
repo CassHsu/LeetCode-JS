@@ -1,4 +1,4 @@
-function sortSentence(s: string): string {
+var sortSentence = function(s) {
     const ss = s.split(" ");
     const ret = [];
     
@@ -7,6 +7,5 @@ function sortSentence(s: string): string {
        const i = parseInt(w[w.length - 1]);
        ret[i - 1] = w.substring(0, w.length - 1);
     });
-    
     return ret.join(" ");
 };
