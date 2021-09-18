@@ -1,18 +1,19 @@
 var intersect = function(nums1, nums2) {
-    const res = [];
+    const ans = [];
     const m = new Map();
-    
-    for (let n of nums1) {
-        if (m[n]) m[n]++;
-        else m[n] = 1;
+    for (const n of nums1) {
+        const v = m.get(n);
+        if (v) m.set(n, v + 1);
+        else m.set(n, 1);
     }
     
-    for (let n of nums2) {
-        if (m[n] > 0) {
-            m[n]--;
-            res.push(n);
+    for (const n of nums2) {
+        const v = m.get(n);
+        if (v && v > 0) {
+            m.set(n, v - 1);
+            ans.push(n);
         }
     }
     
-    return res;
+    return ans;
 };
