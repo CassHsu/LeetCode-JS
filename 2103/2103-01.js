@@ -10,6 +10,8 @@ var countPoints = function(rings) {
     }
     
     for (let v of m.values()) {
+        if (v.length < 3) continue;
+        
         let r = false;
         let g = false;
         let b = false;
