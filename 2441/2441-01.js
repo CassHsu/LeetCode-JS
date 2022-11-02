@@ -1,6 +1,5 @@
 var findMaxK = function(nums) {
     const m = new Map();
-    const pn = [];
     
     nums.forEach(n => {
         if (m.has(n)) m.set(n, m.get(n) + 1);
