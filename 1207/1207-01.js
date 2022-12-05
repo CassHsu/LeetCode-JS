@@ -10,11 +10,11 @@ var uniqueOccurrences = function(arr) {
         }
     }
     
-    for (let v of m) {
-        if (s.has(v[1])) {
-            return false
+    for (let v of m.values()) {
+        if (s.has(v)) {
+            return false;
         }
-        s.add(v[1]);
+        s.add(v);
     }
     
     return true;
