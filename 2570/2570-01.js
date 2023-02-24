@@ -1,4 +1,3 @@
-```jsx
 var mergeArrays = function(nums1, nums2) {
     const m = new Map();
     const ans = [];
@@ -37,4 +36,3 @@ var mergeArrays = function(nums1, nums2) {
 
     return ans;
 };
-```
