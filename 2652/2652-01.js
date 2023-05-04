@@ -7,7 +7,5 @@ var sumOfMultiples = function(n) {
         }
     }
 
-    let ans = 0;
-    multiples.forEach(m => ans += m);
-    return ans;
+    return multiples.reduce((acc, cur) => acc + cur, 0);
 };
