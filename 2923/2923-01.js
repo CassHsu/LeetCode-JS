@@ -4,7 +4,7 @@ var findChampion = function(grid) {
 
     for (let i = 0; i < n; i++) {
         let sum = 0;
-        for (j = 0; j < m; j++) {
+        for (let j = 0; j < m; j++) {
             sum += grid[i][j];
         }
 
